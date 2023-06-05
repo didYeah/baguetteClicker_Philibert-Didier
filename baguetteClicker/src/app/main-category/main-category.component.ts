@@ -50,9 +50,22 @@ export class MainCategoryComponent implements OnInit {
     }
   }
 
-  onClickBread(): void {}
+  onClickBread(): void {
+    this.totalGlobal += this.clickValue; // Création de la fonction onClick
+  }
 
-  buyItem(): void {}
+  buyItem(itemId: number): void { // Création de la fonction buyItem
+    const item = this.categories.find(category => category.id === itemId);
+    if (item && this.totalGlobal >= item.price) {
+      this.totalGlobal -= item.price; // déduire de la variable « totalGlobal » le prix de l'objet qui se trouve dans le tableau « categories »
+      item.price = Math.round(item.price * 1.075); // Augmentez ensuite la valeur du prix de l'objet de 7.5% en utilisant la fonction Math.round() pour arrondir le résultat
+      this.descCategories[itemId].total++; // incrémentez de 1 la propriété « total » de l'objet « descCategories » qui correspond à « itemId »
+      if (this.descCategories[itemId].name !== 'Clics') { 
+        this.descCategories[itemId].eachSecond = 5 * Math.pow(2, itemId) * this.descCategories[itemId].total;
+      }
+      this.totalPerSecond = 5 * Math.pow(2, itemId);
+    }
+  }
 
   addBreadPerSecondToTotal(): void {}
 
