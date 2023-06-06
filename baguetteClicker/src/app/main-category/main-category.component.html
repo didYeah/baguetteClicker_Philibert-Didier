@@ -1,31 +1,33 @@
 <div class="center-items col-category">
     <!-- Boucle directive structurelle pour afficher la catégorie, la quantit, la production -->
-    <div class="space-category-details" *ngFor="let category of descCategories"> 
-        <h3>{{ category.name }}</h3>
-        <p>Nombre: {{ category.total }}</p>
+    <div class="space-category-details" *ngFor="let category of descCategories">
+        <h3>{{ category.name }}</h3> <!-- Récupértation des catégories -->
+        <p>Nombre: {{ category.total }}</p> <!-- Récupération du nombre -->
         <p>Production: {{ category.eachSecond }} {{ titlesList[1] }}</p>
     </div>
 </div>
 <div class="center-items centered-category">
     <h2 class="title-frame">
-        {{totalGlobal }} {{ titlesList[0]}}
+        {{totalGlobal }} {{ titlesList[0]}} 
     </h2>
     <span class="bakery-frame-color small-text" *ngIf="totalPerSecond">
         {{ totalPerSecond }} {{ titlesList[1] }}
-      </span>
+    </span>
     <div class="center-items">
-         <!-- Appel de la fonction de clic sur l'image -->
+        <!-- Appel de la fonction de clic sur l'image -->
         <a (click)="onClickBread()">
             <img class="bread-clicker" [src]="breadClicker[0]" [alt]="breadClicker[1]" />
-          </a>
+        </a>
     </div>
     <div class="center-items bonus-shop-frame">
 
     </div>
 </div>
 <div class="center-items col-category">
-     <!-- Boucle directive structurelle pour afficher les donnée de catégorie -->
-    <button *ngFor="let type of categories" [disabled]="type.inactive" (click)="buyItem(type.id)">
-        {{ type.name }}
-      </button>
+    <!-- Boucle directive structurelle pour afficher les boutons -->
+    <button *ngFor="let type of categories" 
+            [disabled]="type.inactive" 
+            (click)="buyItem(type.id)"> <!-- Appel de la fonction "buyItem" au clic sur le bouton une fois désactivé -->
+            {{ type.name }}
+    </button>
 </div>

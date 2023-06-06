@@ -1,10 +1,12 @@
 <div class="center-items all-screen">
     <div class="bakery-frame">
-        <div class="bakery-top center-items"><h1>{{title}}</h1>
+        <div class="bakery-top center-items"><h1 colorize>{{title}}</h1> <!-- Ajout de la directive "Colorize"-->
         </div>
         <div class="bakery-center">
             <app-main-category></app-main-category>
-        </div>      
-        <span class="bakery-bottom small-text center-items">©{{copyrightYear}} - {{copyrightName}}</span>
+        </div>  
+        <!-- IV Utilisation des Pipes
+        Ajouter un pip qui transforme le Nom en majuscules -->    
+        <span class="bakery-bottom small-text center-items">©{{copyrightYear}} - {{copyrightName | uppercase}} </span>
     </div>
 </div>
