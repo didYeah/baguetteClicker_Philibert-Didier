@@ -14,7 +14,7 @@ export class PluralizePipe implements PipeTransform {
 
   // Création du composant de transformation
   
-  // Mis en commentaire pour le moment
+  // Mis en commentaire pour le moment car l'appel de "pluralize" génère une erreur
   // transform(value: number, singular: string, plural: string): string {
   //  return this.pluralize.transform(value, singular, plural);
   // }
