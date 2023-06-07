@@ -6,10 +6,11 @@ import { FrameComponent } from './frame/frame.component';
 import { MainCategoryComponent } from './main-category/main-category.component';
 import { PluralizePipe } from './pluralize.pipe';
 import { ColorizeDirective } from './colorize.directive';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent, FrameComponent, MainCategoryComponent, PluralizePipe, ColorizeDirective],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })
